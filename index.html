@@ -28,36 +28,42 @@
         function MainIntro(props) {
             return (
                 <section id="introduction">
-                    <p>Hi, I'm {props.name}! I'm {props.age} years old and below this line you'll find more information about me.</p>
+                    <div className="item">
+                        <p className="intro">Hi, I'm {props.name}! I'm {props.age} years old and below this line you'll find more information about me.</p>
+                    </div>
                 </section>
             )
         }
 
         function MainEducation(props) {
             return (
-                <section id="Education">
-                    <p>I have studied at:</p>
-                    <ul>
-                        <li>IES BEZMILIANA</li>
-                        <li>Minnesota University</li>
-                    </ul>
+                <section className="padding margin" id="Education">
+                    <div className="item">
+                        <p className="bold m-bottom-0">I have studied at:</p>
+                        <ul>
+                            <li>University of Glasgow</li>
+                            <li>University of Edinburgh</li>
+                        </ul>
+                    </div>
                 </section>
             )
         }
 
         function MainWorks() {
             return (
-                <section id="works">
-                    <p>I have worked at:</p>
-                    <div id="works_list">
-                        <ul>
-                            <li>Github as Engineer during 2018 and there I have to
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <section className="padding margin" id="works">
+                    <div className="item">
+                        <p className="bold m-bottom-0">I have worked at:</p>
+                        <div id="works_list">
+                            <ul>
+                                <li>Github as Engineer during 2018 and there I have to
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </li>
-                            <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
-                            A assumenda autem dolorem doloremque
+                                <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
+                                A assumenda autem dolorem doloremque
                 </li>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             )
@@ -65,14 +71,18 @@
 
         function MainContact(props) {
             return (
-                <section id="Contact-section">
-                    <p>My contact information: </p>
-                    <address id="Contact-info">
-                        <p>My name is: {props.name}</p>
-                        <p>My email is: <a href="mailto://{props.email}">{props.email}</a></p>
-                        <p>My phone number is: <a href="tel:+{props.phoneNumber}">{props.phone}</a></p>
-                        <img src="images/sally-and-eddie.jpg" alt="Sally and Eddie" width="500"></img>
-                    </address>
+                <section className="padding margin" id="Contact-section">
+                    <div className="item">
+                        <p className="bold m-bottom-0">My contact information: </p>
+                        <address id="Contact-info">
+                            <p>My name is: {props.name}</p>
+                            <p>My email is: <a href="mailto://{props.email}">{props.email}</a></p>
+                            <p>My phone number is: <a href="tel:+{props.phoneNumber}">{props.phone}</a></p>
+                        </address>
+                    </div>
+                    <div className="item">
+                        <img className="center-img" src="images/sally-and-eddie.jpg" alt="Sally and Eddie" width="500"></img>
+                    </div>
                 </section>
             )
         }
@@ -88,7 +98,7 @@
         function App() {
             return (
                 <div>
-                    <Header name={student.name}/>
+                    <Header name={student.name} />
                     <MainIntro name={student.name} age={student.age} />
                     <MainEducation />
                     <MainWorks />

@@ -1,8 +1,47 @@
 .title {
-    font-size: 36px;
+    margin: 15px;
+}
+
+h1 {
+    font-size: 28px;
     text-align: center;
+}
+
+p {
+    font-size: 16px;
 }
 
 body {
     font-family: sans-serif;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.center-img {
+    margin: 5px auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin {
+    margin-left: 25px;
+}
+
+.m-bottom-0 {
+    margin-bottom: 0px;
+}
+
+.intro {
+    text-align: center;
+    padding: 10px
+}
+
+li {
+    padding: 3px;
+}
+
