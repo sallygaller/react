@@ -36,32 +36,34 @@
         }
 
         function MainEducation(props) {
+            const unis = props.unis;
+            const listItems = unis.map((uni) =>
+                <li key={props.unis.id}>{uni}</li>
+            )
             return (
                 <section className="padding margin" id="Education">
                     <div className="item">
                         <p className="bold m-bottom-0">I have studied at:</p>
                         <ul>
-                            <li>University of Glasgow</li>
-                            <li>University of Edinburgh</li>
+                            {listItems}
                         </ul>
                     </div>
                 </section>
             )
         }
 
-        function MainWorks() {
+        function MainWorks(props) {
+            const employers = props.employers;
+            const listEmployers = employers.map((employer) =>
+                <li key={props.employers.id}>{employer}</li>
+            )
             return (
                 <section className="padding margin" id="works">
                     <div className="item">
                         <p className="bold m-bottom-0">I have worked at:</p>
                         <div id="works_list">
                             <ul>
-                                <li>Github as Engineer during 2018 and there I have to
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </li>
-                                <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
-                                A assumenda autem dolorem doloremque
-                </li>
+                                {listEmployers}
                             </ul>
                         </div>
                     </div>
@@ -91,6 +93,10 @@
             name: 'Sally Galler',
             age: 31,
             email: "sally@IntenetExplorer.old",
+            unis: ["University of Glasgow",
+                "University of Edinburgh"],
+            employers: ["The Oregon Zoo Foundation as a Database Administrator from 2018-present. I manage the CRM database and create reports.",
+                "Lewis & Clark College as a Development Specialist from 2017-2018. I ran reports and assisted the development team."],
             phoneNumber: 34100572415,
             phone: "+34 100 57 24 15"
         }
@@ -100,8 +106,8 @@
                 <div>
                     <Header name={student.name} />
                     <MainIntro name={student.name} age={student.age} />
-                    <MainEducation />
-                    <MainWorks />
+                    <MainEducation unis={student.unis} />
+                    <MainWorks employers={student.employers} />
                     <MainContact name={student.name} email={student.email} phoneNumber={student.phoneNumber} phone={student.phone} />
                 </div>
             )
